@@ -1,3 +1,11 @@
+sesameparc_modele:
+    resource: "@sesameparcBundle/Controller/ModeleController.php"
+    type:     annotation
+
+sesameparc:
+    resource: "@sesameparcBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

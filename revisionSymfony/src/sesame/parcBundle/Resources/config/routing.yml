@@ -1,0 +1,28 @@
+sesameparc_homepage:
+    path:     /
+    defaults: { _controller: sesameparcBundle:Default:index }
+
+modele_index:
+    path:     /modele
+    defaults: { _controller: "sesameparcBundle:Modele:index" }
+    methods:  GET
+    
+modele_show:
+    path:     /{id}/show
+    defaults: { _controller: "sesameparcBundle:Modele:show" }
+    methods:  GET
+
+modele_new:
+    path:     /new
+    defaults: { _controller: "sesameparcBundle:Modele:new" }
+    methods:  [GET, POST]
+
+modele_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "sesameparcBundle:Modele:edit" }
+    methods:  [GET, POST]
+
+modele_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "sesameparcBundle:Modele:delete" }
+    methods:  DELETE

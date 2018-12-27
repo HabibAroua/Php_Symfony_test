@@ -1,0 +1,4 @@
+services:
+#    sesameparc.example:
+#        class: sesame\parcBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
