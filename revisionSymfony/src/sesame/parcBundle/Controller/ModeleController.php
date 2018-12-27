@@ -40,21 +40,29 @@ class ModeleController extends Controller
     public function newAction(Request $request)
     {
         $modele = new Modele();
-        $form = $this->createForm('sesame\parcBundle\Form\ModeleType', $modele);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($modele);
-            $em->flush();
-
-            return $this->redirectToRoute('modele_show', array('id' => $modele->getId()));
+        if ($modele->getPays()=="Japan")
+        {
+            echo "<script>alert('Error'); </script>";
         }
+        else
+        {
+            $form = $this->createForm('sesame\parcBundle\Form\ModeleType', $modele);
+            $form->handleRequest($request);
 
-        return $this->render('modele/new.html.twig', array(
-            'modele' => $modele,
-            'form' => $form->createView(),
-        ));
+            if ($form->isSubmitted() && $form->isValid())
+            {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($modele);
+                $em->flush();
+                return $this->redirectToRoute('modele_show', array('id' => $modele->getId()));
+            }
+            
+            return $this->render('modele/new.html.twig', array(
+                'modele' => $modele,
+                'form' => $form->createView(),
+            ));
+        echo "<script>alert('Error'); </script>";
+        }
     }
 
     /**
